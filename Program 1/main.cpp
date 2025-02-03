@@ -5,11 +5,12 @@
 //  Created by Sarah Svitlik on 2/3/25.
 //
 //
-
 #include <iostream>
-   
+using namespace std;
+#include <fstream>
+
 int main(int argc, const char * argv[]) {
     // insert code here...
-    std::cout << "Hello, World!\n";
+    ofstream myOut ("P1_Svitlik_Larkin.txt", ios::out | ios::app);
     return 0;
 }
