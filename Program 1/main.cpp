@@ -6,8 +6,9 @@
 //
 //
 #include <iostream>
-using namespace std;
 #include <fstream>
+#include <getopt.h>
+using namespace std;
 
 int main(int argc, const char * argv[]) {
     ofstream myOut ("P1_Svitlik_Larkin.txt", ios::out | ios::app);
@@ -15,5 +16,14 @@ int main(int argc, const char * argv[]) {
     cout << "-----------------------------------------------" << endl;
     myOut << "-----------------------------------------------" << endl;
     
+    int option;
+    struct option longOpts[] = {
+        {"verbose", no_argument, NULL, 'b'},
+        {NULL, 0, NULL, 0}
+    };
+    
     return 0;
 }
+
+//short switches: l, i
+//long switches: au, ls
