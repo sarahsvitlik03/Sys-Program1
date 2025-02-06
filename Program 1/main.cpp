@@ -7,49 +7,31 @@
 //
 #include <iostream>
 #include <fstream>
-#include <getopt.h>
+
 using namespace std;
 
-int main(int argc, char * argv[]) {
+int main(int argc, const char * argv[]) {
     ofstream myOut ("P1_Svitlik_Larkin.txt", ios::out | ios::app);
     
     cout << "-----------------------------------------------" << endl;
     myOut << "-----------------------------------------------" << endl;
-    
-    int option;
-    struct option longOpts[] = { //Process long switches
-        {"verbose", no_argument, NULL, 'b'},
-        {"output", required_argument, NULL, 'o'},
-        {"recursive", no_argument, NULL, 'R'},
-        {"debug", optional_argument, NULL, 0},
-        {NULL, 0, NULL, 0}
-    };
-    
-    cout << "Processing: " << argv[0] << endl;
-    int code, ch, optx;
-    
-    for (;;) { //Loop processes short switches
-        ch = getopt_long(argc, argv, "i:auiRlsb:o", longOpts, &code);
-        if (ch == -1) break;
-        switch (ch) {
-            case 'a': //these switches have no arguments.
-            case 'u':
-            case 'b':
-            case 'R': // Something
-            case 'o': // something
-            case 'i': //something
-                break;
-            case 0: {
-                //some code here
-                break;
-            }
-            case '?': //check  for invalid switches
-                break;
+ 
+    for (int i = 0; i <argc; i++){
+        if (i == 0) {
+            cout << "Command: " << argv[i] << endl;
+            myOut << "Command: " << argv[i] << endl;
+        }
+        else if (argv[i][0] == '-') {
+            cout << "Switch: " << argv[i] << endl;
+            myOut << "Switch: " << argv[i] << endl;
+        } else {
+            cout << "Argument: " << argv[i] << endl;
+            myOut << "Argument: " << argv[i] << endl;
         }
     }
     
+    myOut.close();
     return 0;
 }
-
-//short switches: l, i
-//long switches: au, ls
+ // For test e, the argument includes the class name and then the mytext.html.
+// For test f, the arguemnts include the .bak files and text.log.
