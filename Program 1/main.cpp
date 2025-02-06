@@ -19,6 +19,8 @@ int main(int argc, const char * argv[]) {
     int option;
     struct option longOpts[] = {
         {"verbose", no_argument, NULL, 'b'},
+        {"output", required_argument, NULL, 'o'},
+        {"debug", optional_argument, NULL, 0},
         {NULL, 0, NULL, 0}
     };
     
