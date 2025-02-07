@@ -2,7 +2,7 @@
 //  main.cpp
 //  Program 1
 //
-//  Created by Sarah Svitlik on 2/3/25.
+//  Created by Sarah Svitlik & Nicholas Larkin on 2/3/25.
 //
 //
 #include <iostream>
